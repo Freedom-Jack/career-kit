@@ -12,6 +12,7 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
+\setlist[itemize]{leftmargin=*, itemsep=-2pt, topsep=0pt, partopsep=0pt, parsep=0pt} % Tighter lists
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -45,11 +46,23 @@
 % Custom commands
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}
-  \begin{flushleft}
-    \textbf{#1} \hfill #2\\[-2pt]
-    \textit{#3} \hfill \textit{#4}
-  \end{flushleft}
+  \noindent\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2\\[-2pt]
+    \textit{#3} & \textit{#4}
+  \end{tabular*}
   \vspace{-6pt}
+}
+
+\newenvironment{resumeRole}[2]{
+  \vspace{4pt}
+  \noindent\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{#1} & \textit{#2}
+  \end{tabular*}
+  \vspace{-12pt}
+  \begin{itemize}
+}{
+  \end{itemize}
+  \vspace{4pt}
 }
 
 \begin{document}
@@ -66,17 +79,15 @@
 
 % SUMMARY - Updated to reflect true experience and leadership
 \section{Summary}
-Lead AI/ML Engineer with over three years of experience architecting and shipping high-impact AI and distributed data systems. Proven ability to lead projects from concept to production, including delivering an enterprise RAG system for 50K+ users and pioneering novel AI agents for legacy code modernization. Seeking senior engineering roles at leading technology companies.
+Lead AI/ML Engineer (3+ years) specializing in architecting and shipping production-grade AI and distributed data systems. Proven expertise in leading projects from concept to production, including the delivery of an enterprise RAG system for 50K+ users and pioneering novel AI agents for legacy code modernization.
 
 % SKILLS - Enhanced with POC technologies
 \section{Technical Skills}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, parsep=0pt, topsep=0pt]
-    \item \textbf{Languages:} Python, Java, Go, SQL, JavaScript, C++
-    \item \textbf{AI/ML:} PyTorch, TensorFlow, LangChain, LangGraph, AutoGen, RAG, Agentic Workflows, Vector DBs (Pinecone, Weaviate), Azure OpenAI, Gemini, vLLM, MLflow
-    \item \textbf{Data/Streaming:} Apache Spark, Kafka (~2.3M msgs/min), Airflow, ETL/ELT, Data Lineage (OpenLineage), Delta Lake, PostgreSQL, Redis
-    \item \textbf{Cloud/Infra:} AWS (EC2, S3, EKS, SageMaker), Azure (AKS, Functions, ML Studio), Docker, Kubernetes, Terraform
-    \item \textbf{Systems:} Distributed Systems, Microservices, gRPC/REST APIs, CI/CD (GitHub Actions), System Design, SLI/SLO
-\end{itemize}
+\vspace{2pt}
+\textbf{Languages:} Python, Java, Go, SQL, JavaScript, C++ \\
+\textbf{AI/ML:} PyTorch, LangGraph, RAG, Agentic, MCP, Vector DBs, Azure OpenAI, vLLM, JAX \\
+\textbf{Data/Streaming:} Apache Spark, Kafka, Airflow, Data Lineage (OpenLineage), Delta Lake, PostgreSQL, Redis \\
+\textbf{Cloud/Infra \& Systems:} AWS, Azure, GCP, Docker, Kubernetes, Terraform, Microservices, gRPC, CI/CD
 
 % EXPERIENCE - Stacked format showing progression
 \section{Experience}
@@ -84,34 +95,28 @@ Lead AI/ML Engineer with over three years of experience architecting and shippin
 \resumeSubheading
 {CGI Inc.}{Toronto, ON}
 {Lead AI/ML Engineer (Tech Lead), AI Center of Excellence}{Jan 2025 -- Mar 2025}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=-1pt]
-    \item Led the design and development of a proof-of-concept AI agent for a legacy proprietary language (RTM); architected a dynamic LangGraph workflow with dual-state planning to generate and review code, mitigating critical maintenance risks on legacy insurance systems
+\begin{itemize}
+    \item Led development of an AI agent for a legacy proprietary language (RTM); architected a dynamic LangGraph workflow with dual-state planning to generate and review code, mitigating critical maintenance risks on legacy insurance systems
     \item Received the \textbf{CGI Impact Award 2024} for exceptional contributions to generative AI projects
 \end{itemize}
 
-\vspace{-6pt} % Adjust spacing between roles
-
-\textit{Data Architect \& Engineering Lead, Senior Consultant} \hfill \textit{Aug 2023 -- Dec 2024}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=-1pt]
-    \item Architected and shipped an AI-powered RAG chatbot (Azure + AWS) for 50K+ users that reduced support tickets by ~90\%; enhanced the bot with Mermaid graph generation and integrated it into Microsoft Teams via Copilot Studio
-    \item Engineered a data lineage POC using OpenLineage and LLMs to automatically map and document complex data flows, improving data governance and accelerating incident resolution
+\begin{resumeRole}{Data Architect \& Engineering Lead, Senior Consultant}{Aug 2023 -- Dec 2024}
+    \item Shipped an enterprise RAG chatbot (Azure/AWS) for 50K+ users that reduced support tickets by ~90\%; enhanced the bot with Mermaid graph generation and integrated it into Microsoft Teams via Copilot Studio
+    \item Built a data lineage POC using OpenLineage \& LLMs to automatically map and document complex data flows, improving data governance and accelerating incident resolution
     \item Developed key components for a GenAI initiative for RBC, automating the update of financial compliance rules in AxiomSL, which showed the potential to reduce manual effort by over 80\%
-\end{itemize}
+\end{resumeRole}
 
-\vspace{-6pt} % Adjust spacing between roles
-
-\textit{Data Engineer, Consultant} \hfill \textit{Aug 2021 -- Jul 2023}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=-1pt]
-    \item Built and maintained components for a real-time streaming data platform processing ~5 TB/day, utilizing Kafka and Spark to meet a 99.9\% availability SLO
+\begin{resumeRole}{Data Engineer, Consultant}{Aug 2021 -- Jul 2023}
+    \item Built components for a real-time streaming data platform processing ~5 TB/day, utilizing Kafka and Spark to meet a 99.9\% availability SLO
     \item Engineered a feature extraction pipeline for a fraud-detection model that improved AUC by +0.213 (from 0.76 to 0.973), contributing to an estimated ~\$2.1M/year in savings (PyTorch, MLflow)
-\end{itemize}
+\end{resumeRole}
 
 \vspace{3pt}
 
 \resumeSubheading
 {York University -- Elder Laboratory}{Toronto, ON}
 {Research Assistant -- Computer Vision \& ML}{Nov 2018 -- Aug 2021}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=-1pt]
+\begin{itemize}
     \item Built computer vision pipeline processing 10,000+ hours of hockey footage; 92\% player tracking accuracy using PyTorch/TensorFlow
     \item Achieved real-time 30 FPS object detection with YOLOv5 on GPU cluster; reduced manual annotation time 80\%
     \item Co-authored paper on attention mechanisms in sports analytics; presented at CVPR 2021 Workshop on Computer Vision in Sports
@@ -119,33 +124,14 @@ Lead AI/ML Engineer with over three years of experience architecting and shippin
 
 \vspace{3pt}
 
-\resumeSubheading
-{Nascent Digital}{Toronto, ON}
-{Full-Stack Developer Intern}{May 2019 -- Aug 2019}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=-1pt]
-    \item Reduced homepage load time 69\% (4.2s to 1.3s) through React architecture redesign; improved Core Web Vitals +40 points
-    \item Built A/B testing framework increasing conversion 12\%; implemented visual regression testing reducing QA time 50\%
-\end{itemize}
-
-% PROJECTS
-\section{Projects}
-
-\textbf{Open-Source Contributions} \hfill \href{https://github.com/Freedom-Jack}{github.com/Freedom-Jack}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=-1pt]
-    \item \textbf{AIHawk} (3.8k+ stars): Contributed reliability/retry logic for high-volume workflow automation; improved stability under bursty traffic
-    \item \textbf{Distributed ML Training}: 16x speedup training ResNet-50 on 8x A100 via mixed precision + gradient accumulation
-    \item \textbf{Realtime Recommendations}: 1M+ recs/day at p95 < 50 ms using Faiss ANN + Redis
-\end{itemize}
-
 % EDUCATION
 \section{Education}
 
 \resumeSubheading
 {York University}{Toronto, ON}
 {Bachelor of Science in Computer Science, Specialized Honours}{Sep 2017 -- Apr 2020}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=-1pt]
-    \item GPA: 3.9/4.0 · First in Class · Dean's List (All Semesters) · York Scholar Award
-\end{itemize}
+\vspace{2pt}
+\textit{GPA: 3.9/4.0, First in Class, Dean's List (All Semesters)}
 
 % CERTIFICATIONS - Cleaned up
 \section{Certifications}
