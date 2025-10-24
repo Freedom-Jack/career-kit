@@ -1,7 +1,7 @@
 %-------------------------
 % FAANG-Optimized Resume - Full Career Progression Version
 % Author: Qijin Xu
-% Target: Senior ML Engineer/Data Engineer/Applied Scientist roles at top tech companies
+% Target: Lead AI/ML Engineer/Software Developer/Data Engineer roles at top companies
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
@@ -17,6 +17,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{hyperref}
+\input{glyphtounicode}
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
@@ -40,25 +41,36 @@
 
 % Section formatting
 \titleformat{\section}{
-  \vspace{-8pt}\scshape\raggedright\large\bfseries
+  \vspace{-8pt}\scshape\raggedright\fontsize{13.5pt}{15.5pt}\selectfont\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Custom commands
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}
-  \noindent\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & #2\\[-2pt]
-    \textit{#3} & \textit{#4}
-  \end{tabular*}
-  \vspace{-6pt}
+\newcommand{\companyline}[2]{%
+  \vspace{3pt}%
+  \noindent{\bfseries\fontsize{12.5pt}{13.8pt}\selectfont #1}\hfill{\fontsize{11.5pt}{13pt}\selectfont #2}\par
+  \vspace{1pt}%
 }
 
-\newenvironment{resumeRole}[2]{
+\newcommand{\roleline}[2]{%
+  \noindent{\bfseries\fontsize{11pt}{12.5pt}\selectfont #1}\hfill{\fontsize{10.5pt}{12pt}\selectfont #2}\par
+  \vspace{1pt}%
+}
+
+\newcommand{\resumeSubheading}[4]{
   \vspace{4pt}
-  \noindent\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textit{#1} & \textit{#2}
-  \end{tabular*}
-  \vspace{-12pt}
+  \noindent\textbf{#1}\hfill #2\par
+  \noindent\textbf{#3}\hfill #4\par
+  \vspace{2pt}
+}
+
+\newcommand{\resumeCompany}[2]{
+  \companyline{#1}{#2}
+}
+
+\newcommand{\daterange}[2]{#1 - #2}
+
+\newenvironment{resumeRole}[2]{
+  \roleline{#1}{#2}
   \begin{itemize}
 }{
   \end{itemize}
@@ -71,70 +83,64 @@
 \begin{center}
     {\LARGE \textbf{Qijin Xu}}\\
     \vspace{3pt}
-    Toronto, ON, Canada · \href{mailto:qxjack@gmail.com}{qxjack@gmail.com} · +1-250-812-3238\\
-    \href{https://github.com/Freedom-Jack}{github.com/Freedom-Jack} · \href{https://www.linkedin.com/in/qijin-x-4899671a9/}{linkedin.com/in/qijin-x} · \href{https://my-website-freedomjack.vercel.app/}{my-website-freedomjack.vercel.app}
+    Toronto, ON, Canada | \href{mailto:qxjack@gmail.com}{qxjack@gmail.com} | +1-250-812-3238\\
+    \href{https://github.com/Freedom-Jack}{github.com/Freedom-Jack} | \href{https://www.linkedin.com/in/qijin-x-4899671a9/}{linkedin.com/in/qijin-x} | \href{https://my-website-freedomjack.vercel.app/}{my-website-freedomjack.vercel.app}
 \end{center}
 
 \vspace{-10pt}
 
 % SUMMARY - Updated to reflect true experience and leadership
 \section{Summary}
-Lead AI/ML Engineer (3+ years) specializing in architecting and shipping production-grade AI and distributed data systems. Proven expertise in leading projects from concept to production, including the delivery of an enterprise RAG system for 50K+ users and pioneering novel AI agents for legacy code modernization.
+Lead AI/ML Engineer delivering production-grade AI and distributed data systems. Cut support tickets 90\% for 50K+ users with an enterprise Retrieval-Augmented Generation (RAG) platform, built LangGraph/MCP Large Language Model (LLM) agent workflows, and modernized legacy codebases with AI-driven tooling.
 
 % SKILLS - Enhanced with POC technologies
 \section{Technical Skills}
 \vspace{2pt}
-\textbf{Languages:} Python, Java, Go, SQL, JavaScript, C++ \\
-\textbf{AI/ML:} PyTorch, LangGraph, RAG, Agentic, MCP, Vector DBs, Azure OpenAI, vLLM, JAX \\
-\textbf{Data/Streaming:} Apache Spark, Kafka, Airflow, Data Lineage (OpenLineage), Delta Lake, PostgreSQL, Redis \\
-\textbf{Cloud/Infra \& Systems:} AWS, Azure, GCP, Docker, Kubernetes, Terraform, Microservices, gRPC, CI/CD
+\textbf{Languages:} Python, Java, Go, SQL(TSQL, PostgreSQL), JavaScript, C++ \\
+\textbf{AI/ML:} PyTorch, LangGraph, Retrieval-Augmented Generation (RAG), agent workflows / agents, Model Context Protocol (MCP), Large Language Models (LLMs), FAISS, Pinecone, OpenAI API, vLLM, JAX \\
+\textbf{Data/Streaming:} Apache Spark, Kafka, Airflow, Data Lineage (OpenLineage), Redis \\
+\textbf{Cloud/Infra and Systems:} Azure, GCP, AWS, Docker, Kubernetes, Terraform, Microservices, gRPC, CI/CD
 
 % EXPERIENCE - Stacked format showing progression
 \section{Experience}
 
-\resumeSubheading
-{CGI Inc.}{Toronto, ON}
-{Lead AI/ML Engineer (Tech Lead), AI Center of Excellence}{Jan 2025 -- Mar 2025}
-\begin{itemize}
-    \item Led development of an AI agent for a legacy proprietary language (RTM); architected a dynamic LangGraph workflow with dual-state planning to generate and review code, mitigating critical maintenance risks on legacy insurance systems
+\resumeCompany{CGI Inc.}{Toronto, ON}
+
+\begin{resumeRole}{Lead AI/ML Engineer (Tech Lead), AI Center of Excellence}{\daterange{Jan 2025}{Mar 2025}}
+    \item Mitigated maintenance risk on legacy insurance systems by shipping an RTM code generation/review agent using a dynamic LangGraph dual-state workflow
     \item Received the \textbf{CGI Impact Award 2024} for exceptional contributions to generative AI projects
-\end{itemize}
-
-\begin{resumeRole}{Data Architect \& Engineering Lead, Senior Consultant}{Aug 2023 -- Dec 2024}
-    \item Shipped an enterprise RAG chatbot (Azure/AWS) for 50K+ users that reduced support tickets by ~90\%; enhanced the bot with Mermaid graph generation and integrated it into Microsoft Teams via Copilot Studio
-    \item Built a data lineage POC using OpenLineage \& LLMs to automatically map and document complex data flows, improving data governance and accelerating incident resolution
-    \item Developed key components for a GenAI initiative for RBC, automating the update of financial compliance rules in AxiomSL, which showed the potential to reduce manual effort by over 80\%
 \end{resumeRole}
 
-\begin{resumeRole}{Data Engineer, Consultant}{Aug 2021 -- Jul 2023}
-    \item Built components for a real-time streaming data platform processing ~5 TB/day, utilizing Kafka and Spark to meet a 99.9\% availability SLO
-    \item Engineered a feature extraction pipeline for a fraud-detection model that improved AUC by +0.213 (from 0.76 to 0.973), contributing to an estimated ~\$2.1M/year in savings (PyTorch, MLflow)
+\begin{resumeRole}{Data Architect and Engineering Lead, Senior Consultant}{\daterange{Aug 2023}{Dec 2024}}
+    \item Reduced support tickets \textbf{90\%} for \textbf{50K+} users by shipping an enterprise Retrieval-Augmented Generation (RAG) chatbot (Azure/AWS) with Mermaid graph generation and Microsoft Teams integration via Copilot Studio
+    \item Improved data governance and accelerated incident resolution by building an OpenLineage + Large Language Model (LLM) POC that auto-mapped and documented complex data flows
+    \item Projected \textbf{80\%+} manual-effort reduction by automating AxiomSL financial compliance rule updates for a GenAI initiative at RBC
 \end{resumeRole}
 
-\vspace{3pt}
+\begin{resumeRole}{Data Engineer, Consultant}{\daterange{Aug 2021}{Jul 2023}}
+    \item Met a \textbf{99.9\%} availability SLO by delivering components for a real-time streaming platform processing \textbf{5 TB/day} (Kafka, Spark)
+    \item Improved fraud-detection AUC from \textbf{0.76 to 0.973 (+0.213)} and saved \textbf{\$2.1M/year} by engineering a feature extraction pipeline (PyTorch, MLflow)
+\end{resumeRole}
 
-\resumeSubheading
-{York University -- Elder Laboratory}{Toronto, ON}
-{Research Assistant -- Computer Vision \& ML}{Nov 2018 -- Aug 2021}
-\begin{itemize}
-    \item Built computer vision pipeline processing 10,000+ hours of hockey footage; 92\% player tracking accuracy using PyTorch/TensorFlow
-    \item Achieved real-time 30 FPS object detection with YOLOv5 on GPU cluster; reduced manual annotation time 80\%
+\resumeCompany{Elder Laboratory, York University}{Toronto, ON}
+
+\begin{resumeRole}{Research Assistant, Computer Vision and ML \textnormal{(part-time; concurrent)}}{\daterange{Aug 2021}{Jul 2023}}
+    \item Processed \textbf{1000+} hours of hockey footage with a computer vision pipeline; achieved \textbf{92\%} player tracking accuracy (PyTorch/TensorFlow)
+    \item Achieved real-time \textbf{30 FPS} object detection with YOLOv5 on a GPU cluster; reduced manual annotation time \textbf{80\%}
     \item Co-authored paper on attention mechanisms in sports analytics; presented at CVPR 2021 Workshop on Computer Vision in Sports
-\end{itemize}
-
-\vspace{3pt}
+\end{resumeRole}
 
 % EDUCATION
 \section{Education}
 
 \resumeSubheading
 {York University}{Toronto, ON}
-{Bachelor of Science in Computer Science, Specialized Honours}{Sep 2017 -- Apr 2020}
+{Bachelor of Science in Computer Science, Specialized Honours}{\daterange{Sep 2017}{Apr 2020}}
 \vspace{2pt}
-\textit{GPA: 3.9/4.0, First in Class, Dean's List (All Semesters)}
+GPA: 3.9/4.0; First in Class; Dean's List (all semesters)
 
 % CERTIFICATIONS - Cleaned up
 \section{Certifications}
-AWS Solutions Architect Professional · Azure AI Engineer Associate
+AWS Solutions Architect Professional | Google Cloud Professional Cloud Developer
 
 \end{document}
