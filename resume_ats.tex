@@ -1,4 +1,4 @@
-%-------------------------
+﻿%-------------------------
 % FAANG-Optimized Resume - Full Career Progression Version
 % Author: Qijin Xu
 % Target: Lead AI/ML Engineer/Software Developer/Data Engineer roles at top companies
@@ -69,6 +69,10 @@
 
 \newcommand{\daterange}[2]{#1 - #2}
 
+\newcommand{\linktag}[2]{%
+  \href{#2}{\textsf{\textsc{#1}}}%
+}
+
 \newenvironment{resumeRole}[2]{
   \roleline{#1}{#2}
   \begin{itemize}
@@ -94,7 +98,7 @@
 
 % SUMMARY - Updated to reflect true experience and leadership
 \section{Summary}
-Lead AI/ML Engineer delivering production-grade AI and distributed data systems. Cut support tickets 90\% for 50K+ users with an enterprise Retrieval-Augmented Generation (RAG) platform, built LangGraph/MCP Large Language Model (LLM) agent workflows, and modernized legacy codebases with AI-driven tooling.
+Lead AI/ML Engineer delivering production-grade AI and distributed data systems. Cut support tickets 90\% for 50K+ users with an enterprise RAG platform, built LangGraph/MCP LLM agent workflows, and modernized legacy codebases with AI-driven tooling.
 
 % SKILLS - Enhanced with POC technologies
 \section{Technical Skills}
@@ -110,27 +114,27 @@ Lead AI/ML Engineer delivering production-grade AI and distributed data systems.
 \resumeCompany{CGI Inc.}{Toronto, ON}
 
 \begin{resumeRole}{Lead AI/ML Engineer (Tech Lead), AI Center of Excellence}{\daterange{Jan 2025}{Present}}
-    \item Mitigated maintenance risk on legacy insurance systems by shipping an RTM code generation/review agent using a dynamic LangGraph dual-state workflow
-    \item Received the \textbf{CGI Impact Award 2024} for exceptional contributions to generative AI projects
+    \item Lead an AI agent for a proprietary coding language, with a LangGraph dual-state dynamic workflow, vLLM-served LLMs with RAG and EBNF structured outputs, PII filtering, documentation, and business-rule extraction; projected 50\% labor reduction, maintain legacy scripts, and help future migration readiness.
 \end{resumeRole}
 
 \begin{resumeRole}{Data Architect and Engineering Lead, Senior Consultant}{\daterange{Aug 2023}{Dec 2024}}
-    \item Reduced support tickets \textbf{90\%} for \textbf{50K+} users by shipping an enterprise Retrieval-Augmented Generation (RAG) chatbot (Azure/AWS) with Mermaid graph generation and Microsoft Teams integration via Copilot Studio
-    \item Improved data governance and accelerated incident resolution by building an OpenLineage + Large Language Model (LLM) POC that auto-mapped and documented complex data flows
-    \item Projected \textbf{80\%+} manual-effort reduction by automating AxiomSL financial compliance rule updates for a GenAI initiative at RBC
+    \item CGI Impact Award 2024: Architected and shipped an LLM-powered enterprise RAG chatbot (LangChain, Azure/AWS/GCP); achieved $\approx90\%$ autonomous resolution for a 50K+ user base and delivered 525\% ROI in 12 months\hfill{\footnotesize\linktag{Product Page}{https://www.cgi.com/canada/en-ca/insurance-chatbot} \textbar\ \linktag{Coverage}{https://www.cgi.com/canada/en-ca/article/insurance/ai-chatbots-insurance-are-transforming-customer-service}}
+    \item Built an OpenLineage-based lineage tool auto-documenting extensible multi-source flows, with LLM-assisted root-cause analysis suggestions, reduced investigation time across 3 incidents per month.
+    \item Automated AxiomSL rule updates with LLM at RBC; ~80\% manual cut.
 \end{resumeRole}
 
 \begin{resumeRole}{Data Engineer, Consultant}{\daterange{Aug 2021}{Jul 2023}}
-    \item Met a \textbf{99.9\%} availability SLO by delivering components for a real-time streaming platform processing \textbf{5 TB/day} (Kafka, Spark)
-    \item Improved fraud-detection AUC from \textbf{0.76 to 0.973 (+0.213)} and saved \textbf{\$2.1M/year} by engineering a feature extraction pipeline (PyTorch, MLflow)
+    \item Managed Canada's largest automobile-insurance policy-history database (2TB big on SQL server), holding 99.9\% uptime and $<$ 200 ms median queries.
+    \item Built production ETL/ELT pipelines for 22+ micro data marts ($\leq 5$ tables each; monthly SLAs) powering finance analytics and ML feature readiness; cut monthly report runtime from 30 min to 5 min ($\approx 83\%$ faster).
+    \item Shipped a machine learning (Gradient-Boost + Logistic Regression) loss-ratio model that lifted recovered fraud losses 321\% versus a top-5 bank benchmark, batch-scoring in a Python/T-SQL pipeline.
 \end{resumeRole}
 
 \resumeCompany{Elder Laboratory, York University}{Toronto, ON}
 
-\begin{resumeRole}{Research Assistant, Computer Vision and ML \textnormal{(part-time; concurrent)}}{\daterange{Aug 2021}{Jul 2023}}
-    \item Built end-to-end computer-vision pipelines for feature extraction on hockey broadcast video in Python (PyTorch, TensorFlow, OpenCV); processed \textbf{1,000+} hours and delivered real-time \textbf{30 FPS} inference with ResNet on a multi-GPU cluster (CUDA)
-    \item Engineered a smooth-pursuit Kalman-filter tracker integrating CNN detections; achieved \textbf{92\%} player-tracking accuracy with under \textbf{100 ms} end-to-end latency; enabled live speed and heat-map analytics
-    \item Developed event-detection and annotation models (CNN-LSTM with attention) reaching \textbf{70\% mAP} on 18 hours of games; automated action spotting to reduce manual labeling by \textbf{80\%} and improve dataset reliability (Cohen's kappa $\approx 0.92$)
+\begin{resumeRole}{Research Assistant, Computer Vision \textnormal{(part-time; concurrent)}}{\daterange{Aug 2021}{Jul 2023}}
+    \item Developed AttentiveVision, a computer-vision pipeline for feature extraction on hockey broadcast video in Python (PyTorch, TensorFlow, OpenCV), training a CNN-LSTM stack that reached mAP $\geq 70\%$ on event detection across 18 hours of game video.
+    \item Engineered a real-time player tracking system using a Kalman-filter tracker and OpenPose, delivering $<100$ ms latency at 30 FPS, capturing pose and momentum for live speed \& heat-map analytics.
+    \item Created an event-detection and annotation (Goal, Timeout, etc.) model for sport game videos, cutting manual labelling effort and raising dataset reliability to Cohen's kappa $\geq 0.92$.
 \end{resumeRole}
 
 % EDUCATION
