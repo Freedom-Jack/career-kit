@@ -17,9 +17,12 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{hyperref}
+\definecolor{ResumeLinkColor}{RGB}{10,102,194} % Accessible link blue
 \input{glyphtounicode}
 \hypersetup{
-    colorlinks=false,
+    colorlinks=true,
+    linkcolor=ResumeLinkColor,
+    urlcolor=ResumeLinkColor,
     pdfborder={0 0 0},
 }
 \pdfgentounicode=1
@@ -70,7 +73,7 @@
 \newcommand{\daterange}[2]{#1 - #2}
 
 \newcommand{\linktag}[2]{%
-  \href{#2}{\textsf{\textsc{#1}}}%
+  \href{#2}{\textcolor{ResumeLinkColor}{\textsf{\textsc{#1}}}}%
 }
 
 \newenvironment{resumeRole}[2]{
