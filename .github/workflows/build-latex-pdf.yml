@@ -1,0 +1,42 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "resume_ats.tex"
+
+permissions:
+  contents: write      # allow the workflow to push commits
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # important so we can push back
+
+      # Use a LaTeX build action (easy mode)
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: resume_ats.tex
+
+      - name: Commit and push PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add QijinXu_Resume.pdf
+
+          # Commit only if there are changes
+          git commit -m "Auto-build PDF from LaTeX [skip ci]" || exit 0
+
+          # Push back to the same branch
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
