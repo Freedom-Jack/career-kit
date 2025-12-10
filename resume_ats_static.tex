@@ -1,0 +1,143 @@
+%-------------------------
+% FAANG-Optimized Resume - Full Career Progression Version (Static, no active content)
+% Author: Qijin Xu
+% Target: Lead AI/ML Engineer/Software Developer/Data Engineer roles at top companies
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+% Essential packages for ATS
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*, itemsep=-2pt, topsep=0pt, partopsep=0pt, parsep=0pt} % Tighter lists
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\definecolor{ResumeLinkColor}{RGB}{10,102,194} % Retained for consistent styling even without links
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% Page setup
+\pagestyle{empty}
+
+% Margins - optimized for one page
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.5in}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-8pt}\scshape\raggedright\fontsize{13.5pt}{15.5pt}\selectfont\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\companyline}[2]{%
+  \vspace{3pt}%
+  \noindent{\bfseries\fontsize{12.5pt}{13.8pt}\selectfont #1}\hfill{\fontsize{11.5pt}{13pt}\selectfont #2}\par
+  \vspace{1pt}%
+}
+
+\newcommand{\roleline}[2]{%
+  \noindent{\bfseries\fontsize{11pt}{12.5pt}\selectfont #1}\hfill{\fontsize{10.5pt}{12pt}\selectfont #2}\par
+  \vspace{1pt}%
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{4pt}
+  \noindent\textbf{#1}\hfill #2\par
+  \noindent\textbf{#3}\hfill #4\par
+  \vspace{2pt}
+}
+
+\newcommand{\resumeCompany}[2]{
+  \companyline{#1}{#2}
+}
+
+\newcommand{\daterange}[2]{#1 - #2}
+
+\newenvironment{resumeRole}[2]{
+  \roleline{#1}{#2}
+  \begin{itemize}
+}{
+  \end{itemize}
+  \vspace{4pt}
+}
+
+\begin{document}
+
+\vspace*{-1.2\baselineskip}
+
+% HEADER
+\begin{center}
+    {\LARGE \textbf{Qijin Xu}}\\
+    \vspace{3pt}
+    Toronto, ON, Canada ? qxjack@gmail.com ? +1-250-812-3238\\
+    github.com/Freedom-Jack ? linkedin.com/in/qijin-x ? my-website-freedomjack.vercel.app
+\end{center}
+
+\vspace{-10pt}
+
+% SUMMARY - Updated to reflect true experience and leadership
+\section{Summary}
+Lead AI/ML Engineer and Software Developer with 5+ years of experience; architected and productionized AI platforms and agents that: automated 90\% of workloads and reduced manual labour by 50\% at 50,000+ user scale, delivered 525\% ROI; in ML, achieved a 321\% lift in fraud-loss prevention vs a top-five bank benchmark.
+
+% SKILLS - Enhanced with POC technologies
+\section{Technical Skills}
+\vspace{2pt}
+\textbf{Languages:} Python, Java, Go, SQL(TSQL, PostgreSQL), JavaScript, C++ \\
+\textbf{AI/ML:} PyTorch, LangGraph, Retrieval-Augmented Generation (RAG), agent workflows / agents, Model Context Protocol (MCP), Large Language Models (LLMs), FAISS, Pinecone, OpenAI API, vLLM, JAX \\
+\textbf{Data/Streaming:} Apache Spark, Kafka, Airflow, Data Lineage (OpenLineage), Redis \\
+\textbf{Cloud/Infra and Systems:} Azure, GCP, AWS, Docker, Kubernetes, Terraform, Microservices, gRPC, CI/CD
+
+% EXPERIENCE - Stacked format showing progression
+\section{Experience}
+
+\resumeCompany{CGI Inc.}{Toronto, ON}
+
+\begin{resumeRole}{Lead AI/ML Engineer (Tech Lead), AI Center of Excellence}{\daterange{Jan 2025}{Present}}
+    \item Lead an AI agent for a proprietary coding language, with a LangGraph dual-state dynamic workflow, vLLM-served LLMs with RAG and EBNF structured outputs, PII filtering, documentation, and business-rule extraction; projected 50\% labor reduction, maintain legacy scripts, and help future migration readiness.
+\end{resumeRole}
+
+\begin{resumeRole}{Data Architect and Engineering Lead, Senior Consultant}{\daterange{Aug 2023}{Dec 2024}}
+    \item CGI Impact Award 2024: Architected and shipped an LLM-powered enterprise RAG chatbot (LangChain, Azure/AWS/GCP); achieved approx. 90\% autonomous resolution for a 50K+ user base and delivered 525\% ROI in 12 months.
+    \item Built an OpenLineage-based lineage tool auto-documenting extensible multi-source flows, with LLM-assisted root-cause analysis suggestions, reduced investigation time across 3 incidents per month.
+    \item Automated AxiomSL rule updates with LLM at RBC; ~80\% manual cut.
+\end{resumeRole}
+
+\begin{resumeRole}{Data Engineer, Consultant}{\daterange{Aug 2021}{Jul 2023}}
+    \item Managed Canada's largest automobile-insurance policy-history database (2TB big on SQL server), holding 99.9\% uptime and less than 200 ms median queries.
+    \item Built production ETL/ELT pipelines for 22+ micro data marts (less than 6 tables each; monthly SLAs) powering finance, analytics and delivery department; cut report runtime from 30 min to 5 min.
+    \item Shipped a machine learning (Gradient-Boost + Logistic Regression) loss-ratio model that lifted recovered fraud losses 321\% versus a top-5 bank benchmark, batch-scoring in a Python/T-SQL pipeline.
+\end{resumeRole}
+
+\resumeCompany{Elder Laboratory, York University}{Toronto, ON}
+
+\begin{resumeRole}{Research Assistant, Computer Vision \textnormal{(part-time; concurrent)}}{\daterange{May 2020}{Aug 2021}}
+    \item Developed AttentiveVision, a computer-vision pipeline for feature extraction on hockey broadcast video in Python (PyTorch, TensorFlow, OpenCV), training a CNN-LSTM stack that reached mAP greater than or equal to 70\% on event detection across 18 hours of game video.
+    \item Engineered a real-time player tracking system using a Kalman-filter tracker and OpenPose, delivering less than 100 ms latency at 30 FPS, capturing pose and momentum for live speed \& heat-map analytics.
+    \item Created an event-detection and annotation (Goal, Timeout, etc.) model for sport game videos, cutting manual labelling effort and raising dataset reliability to Cohen's kappa greater than or equal to 0.92.
+\end{resumeRole}
+
+% EDUCATION
+\section{Education}
+
+\resumeSubheading
+{York University}{Toronto, ON}
+{Bachelor of Science in Computer Science, Specialized Honours}{\daterange{Sep 2017}{Apr 2020}}
+\vspace{2pt}
+GPA: 3.9/4.0; First in Class; Dean's List (all semesters)
+
+% CERTIFICATIONS - Cleaned up
+\section{Certifications}
+Microsoft Certified: Azure Solutions Architect Expert, Google Cloud Professional Cloud Developer
+
+\end{document}
