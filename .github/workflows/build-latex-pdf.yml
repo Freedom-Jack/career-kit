@@ -26,6 +26,12 @@ jobs:
         with:
           root_file: resume_ats.tex
 
+      - name: Rename compiled PDF
+        run: |
+          ls
+
+          mv resume_ats.pdf QijinXu_Resume.pdf
+
       - name: Commit and push PDF
         run: |
           git config user.name "github-actions[bot]"
