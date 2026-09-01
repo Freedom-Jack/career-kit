@@ -1,5 +1,5 @@
 %-------------------------
-% FAANG-Optimized Resume - Full Career Progression Version (Static, no active content)
+% FAANG-Optimized Resume - Rebalanced by Seniority (Static, no active content)
 % Author: Qijin Xu
 % Target: Lead AI/ML Engineer/Software Developer/Data Engineer roles at top companies
 %------------------------
@@ -62,7 +62,7 @@
   \companyline{#1}{#2}
 }
 
-\newcommand{\daterange}[2]{#1 - #2}
+\newcommand{\daterange}[2]{#1 -- #2}
 
 \newenvironment{resumeRole}[2]{
   \roleline{#1}{#2}
@@ -80,21 +80,21 @@
 \begin{center}
     {\LARGE \textbf{Qijin Xu}}\\
     \vspace{3pt}
-    Toronto, ON, Canada ? qxjack@gmail.com ? +1-250-812-3238\\
-    github.com/Freedom-Jack ? linkedin.com/in/qijin-x ? my-website-freedomjack.vercel.app
+    Toronto, ON, Canada \textbullet{} qxjack@gmail.com \textbullet{} +1-250-812-3238\\
+    github.com/Freedom-Jack \textbullet{} linkedin.com/in/qijin-x \textbullet{} my-website-freedomjack.vercel.app
 \end{center}
 
 \vspace{-10pt}
 
 % SUMMARY - Updated to reflect true experience and leadership
 \section{Summary}
-Lead AI/ML Engineer and Software Developer with 5+ years of experience; architected and productionized AI platforms and agents that: automated 90\% of workloads and reduced manual labour by 50\% at 50,000+ user scale, delivered 525\% ROI; in ML, achieved a 321\% lift in fraud-loss prevention vs a top-five bank benchmark.
+Lead AI/ML Engineer and Tech Lead at CGI's AI Center of Excellence with 5+ years delivering LLM agents, RAG platforms, and ML systems to enterprise production for major banks and insurers. Two-time CGI Impact Award winner spanning agent architecture, evaluation, technical leadership, and multi-cloud AI delivery.
 
 % SKILLS - Enhanced with POC technologies
 \section{Technical Skills}
 \vspace{2pt}
-\textbf{Languages:} Python, Java, Go, SQL(TSQL, PostgreSQL), JavaScript, C++ \\
-\textbf{AI/ML:} PyTorch, LangGraph, Retrieval-Augmented Generation (RAG), agent workflows / agents, Model Context Protocol (MCP), Large Language Models (LLMs), FAISS, Pinecone, OpenAI API, vLLM, JAX \\
+\textbf{Languages:} Python, Java, Go, SQL (T-SQL, PostgreSQL), JavaScript, C++ \\
+\textbf{AI/ML:} PyTorch, LangGraph, Retrieval-Augmented Generation (RAG), AI agents, agentic workflows, Model Context Protocol (MCP), Large Language Models (LLMs), FAISS, Pinecone, OpenAI API, vLLM, JAX \\
 \textbf{Data/Streaming:} Apache Spark, Kafka, Airflow, Data Lineage (OpenLineage), Redis \\
 \textbf{Cloud/Infra and Systems:} Azure, GCP, AWS, Docker, Kubernetes, Terraform, Microservices, gRPC, CI/CD
 
@@ -103,28 +103,28 @@ Lead AI/ML Engineer and Software Developer with 5+ years of experience; architec
 
 \resumeCompany{CGI Inc.}{Toronto, ON}
 
-\begin{resumeRole}{Lead AI/ML Engineer (Tech Lead), AI Center of Excellence}{\daterange{Jan 2025}{Present}}
-    \item Lead an AI agent for a proprietary coding language, with a LangGraph dual-state dynamic workflow, vLLM-served LLMs with RAG and EBNF structured outputs, PII filtering, documentation, and business-rule extraction; projected 50\% labor reduction, maintain legacy scripts, and help future migration readiness.
+\begin{resumeRole}{Lead AI/ML Architect | Tech Lead, AI Center of Excellence}{\daterange{Jan 2025}{Present}}
+    \item CGI Impact Award 2026: Led development of an LLM-powered Email Agent for enterprise email workflows, achieving 89\% autonomous handling across 2,000+ emails per month.
+    \item Lead architecture and development of an AI agent for a proprietary legacy programming language, combining LangGraph orchestration, RAG, vLLM-served models, grammar-constrained generation, PII controls, and business-rule extraction; projected to reduce manual effort by 50\% and support legacy-system migration.
+    \item Architected a scalable agent evaluation pipeline with SME-adjudicated rubrics, reference cases, regression suites, and calibrated LLM-as-a-Judge evaluators for decision tasks with noisy and conflicting human labels.
+    \item Drive technical direction across 13+ AI initiatives for TD Bank's compliance SBU, guiding architecture and delivery across a cross-functional team of about 20.
 \end{resumeRole}
 
 \begin{resumeRole}{Data Architect and Engineering Lead, Senior Consultant}{\daterange{Aug 2023}{Dec 2024}}
-    \item CGI Impact Award 2024: Architected and shipped an LLM-powered enterprise RAG chatbot (LangChain, Azure/AWS/GCP); achieved approx. 90\% autonomous resolution for a 50K+ user base and delivered 525\% ROI in 12 months.
-    \item Built an OpenLineage-based lineage tool auto-documenting extensible multi-source flows, with LLM-assisted root-cause analysis suggestions, reduced investigation time across 3 incidents per month.
-    \item Automated AxiomSL rule updates with LLM at RBC; ~80\% manual cut.
+    \item CGI Impact Award 2024: Architected and shipped an LLM-powered enterprise RAG chatbot (LangChain, Azure/AWS/GCP); achieved \textasciitilde 90\% autonomous resolution for a 50,000+ user base and delivered 525\% ROI in 12 months.
+    \item Built an OpenLineage-based data lineage tool auto-documenting extensible multi-source data flows, with LLM-assisted root-cause analysis for production incident investigation.
+    \item Automated AxiomSL regulatory rule updates at RBC with LLMs, reducing manual update effort by \textasciitilde 80\%.
 \end{resumeRole}
 
 \begin{resumeRole}{Data Engineer, Consultant}{\daterange{Aug 2021}{Jul 2023}}
-    \item Managed Canada's largest automobile-insurance policy-history database (2TB big on SQL server), holding 99.9\% uptime and less than 200 ms median queries.
-    \item Built production ETL/ELT pipelines for 22+ micro data marts (less than 6 tables each; monthly SLAs) powering finance, analytics and delivery department; cut report runtime from 30 min to 5 min.
-    \item Shipped a machine learning (Gradient-Boost + Logistic Regression) loss-ratio model that lifted recovered fraud losses 321\% versus a top-5 bank benchmark, batch-scoring in a Python/T-SQL pipeline.
+    \item Shipped a machine learning (Gradient-Boost + Logistic Regression) loss-ratio model that lifted recovered fraud losses 321\% vs a top-5 bank benchmark, batch-scoring in a Python/T-SQL pipeline.
+    \item Managed Canada's largest automobile-insurance policy-history database (2TB, SQL Server) with 99.9\% uptime and under 200 ms median queries; built production ETL/ELT pipelines for 22+ data marts, cutting report runtime from 30 min to 5 min.
 \end{resumeRole}
 
 \resumeCompany{Elder Laboratory, York University}{Toronto, ON}
 
-\begin{resumeRole}{Research Assistant, Computer Vision \textnormal{(part-time; concurrent)}}{\daterange{May 2020}{Aug 2021}}
-    \item Developed AttentiveVision, a computer-vision pipeline for feature extraction on hockey broadcast video in Python (PyTorch, TensorFlow, OpenCV), training a CNN-LSTM stack that reached mAP greater than or equal to 70\% on event detection across 18 hours of game video.
-    \item Engineered a real-time player tracking system using a Kalman-filter tracker and OpenPose, delivering less than 100 ms latency at 30 FPS, capturing pose and momentum for live speed \& heat-map analytics.
-    \item Created an event-detection and annotation (Goal, Timeout, etc.) model for sport game videos, cutting manual labelling effort and raising dataset reliability to Cohen's kappa greater than or equal to 0.92.
+\begin{resumeRole}{Research Assistant, Computer Vision \textnormal{(part-time)}}{\daterange{May 2020}{Aug 2021}}
+    \item AttentiveVision, a CNN-LSTM hockey-broadcast analytics pipeline (PyTorch/TensorFlow, OpenCV): 70\%+ mAP event detection, player tracking under 100 ms at 30 FPS, Cohen's kappa 0.92+ annotation reliability.
 \end{resumeRole}
 
 % EDUCATION
